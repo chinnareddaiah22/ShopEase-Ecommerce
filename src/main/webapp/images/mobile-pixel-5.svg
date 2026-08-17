@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600">
+<rect width="800" height="600" rx="36" fill="#fdf2f8"/>
+<circle cx="675" cy="100" r="85" fill="#ffffff" opacity=".7"/>
+<circle cx="120" cy="510" r="130" fill="#ffffff" opacity=".55"/>
+<text x="55" y="72" font-family="Arial,sans-serif" font-size="22" font-weight="700" fill="#4f46e5">SHOPEASE</text>
+<text x="55" y="112" font-family="Arial,sans-serif" font-size="16" fill="#667085">Back / side view</text>
+<rect x="330" y="105" width="140" height="290" rx="24" fill="#111827"/><rect x="342" y="125" width="116" height="230" rx="14" fill="#818cf8"/><circle cx="400" cy="375" r="9" fill="#d1d5db"/>
+<text x="55" y="520" font-family="Arial,sans-serif" font-size="30" font-weight="800" fill="#111827">PixelMax Pro Mobile</text>
+<text x="55" y="550" font-family="Arial,sans-serif" font-size="15" fill="#667085">Demo product gallery image 5</text>
+</svg>

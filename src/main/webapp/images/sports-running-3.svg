@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600">
+<rect width="800" height="600" rx="36" fill="#f0fdf4"/>
+<circle cx="675" cy="100" r="85" fill="#ffffff" opacity=".7"/>
+<circle cx="120" cy="510" r="130" fill="#ffffff" opacity=".55"/>
+<text x="55" y="72" font-family="Arial,sans-serif" font-size="22" font-weight="700" fill="#4f46e5">SHOPEASE</text>
+<text x="55" y="112" font-family="Arial,sans-serif" font-size="16" fill="#667085">Close-up detail</text>
+<path d="M240 345c60 0 92-48 125-120l42-5c16 54 43 92 91 111l86 34c17 7 22 29 6 39-18 12-56 18-103 18H235c-28 0-41-20-32-39 7-14 20-38 37-38z" fill="#f97316"/><path d="M380 220l27 0 13 42-44 5z" fill="#fb923c"/><path d="M278 380h295" stroke="#fff" stroke-width="12" stroke-linecap="round"/>
+<text x="55" y="520" font-family="Arial,sans-serif" font-size="30" font-weight="800" fill="#111827">Sprint Pro Sports Shoes</text>
+<text x="55" y="550" font-family="Arial,sans-serif" font-size="15" fill="#667085">Demo product gallery image 3</text>
+</svg>
