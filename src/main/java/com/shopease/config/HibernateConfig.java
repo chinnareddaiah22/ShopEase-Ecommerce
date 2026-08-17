@@ -23,19 +23,19 @@ public class HibernateConfig {
         DriverManagerDataSource ds = new DriverManagerDataSource();
 
         ds.setDriverClassName(
-                System.getenv("DB_DRIVER")
+                getRequiredEnvironmentVariable("DB_DRIVER")
         );
 
         ds.setUrl(
-                System.getenv("DB_URL")
+                getRequiredEnvironmentVariable("DB_URL")
         );
 
         ds.setUsername(
-                System.getenv("DB_USERNAME")
+                getRequiredEnvironmentVariable("DB_USERNAME")
         );
 
         ds.setPassword(
-                System.getenv("DB_PASSWORD")
+                getRequiredEnvironmentVariable("DB_PASSWORD")
         );
 
         return ds;
@@ -50,7 +50,9 @@ public class HibernateConfig {
 
         factory.setDataSource(ds);
 
-        factory.setPackagesToScan("com.shopease.model");
+        factory.setPackagesToScan(
+                "com.shopease.model"
+        );
 
         factory.setJpaVendorAdapter(
                 new HibernateJpaVendorAdapter()
@@ -58,25 +60,34 @@ public class HibernateConfig {
 
         Properties properties = new Properties();
 
-        // PostgreSQL - Supabase
+        // PostgreSQL / Supabase
         properties.put(
                 "hibernate.dialect",
                 "org.hibernate.dialect.PostgreSQLDialect"
         );
 
+        // Create/update tables automatically
         properties.put(
                 "hibernate.hbm2ddl.auto",
                 "update"
         );
 
+        // Don't print SQL in production logs
         properties.put(
                 "hibernate.show_sql",
                 "false"
         );
 
+        // Format SQL if Hibernate logs it
         properties.put(
                 "hibernate.format_sql",
                 "true"
+        );
+
+        // Use UTC for JDBC time handling
+        properties.put(
+                "hibernate.jdbc.time_zone",
+                "UTC"
         );
 
         factory.setJpaProperties(properties);
@@ -89,5 +100,18 @@ public class HibernateConfig {
             EntityManagerFactory emf) {
 
         return new JpaTransactionManager(emf);
+    }
+
+    private String getRequiredEnvironmentVariable(String name) {
+
+        String value = System.getenv(name);
+
+        if (value == null || value.trim().isEmpty()) {
+            throw new IllegalStateException(
+                    "Required environment variable is missing: " + name
+            );
+        }
+
+        return value;
     }
 }
