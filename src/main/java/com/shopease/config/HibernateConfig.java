@@ -58,9 +58,10 @@ public class HibernateConfig {
 
         Properties properties = new Properties();
 
+        // PostgreSQL - Supabase
         properties.put(
                 "hibernate.dialect",
-                "org.hibernate.dialect.Oracle10gDialect"
+                "org.hibernate.dialect.PostgreSQLDialect"
         );
 
         properties.put(
